@@ -20,11 +20,19 @@ import { ShellComponent } from './shell.component';
       {
         path: '',
         component: ShellComponent,
-        children: [],
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import(
+                '@heavy-duty/dao/client/projects/components/projects-list'
+              ).then((m) => m.ProjectsListModule),
+          },
+        ],
       },
       {
         path: '**',
-        redirectTo: 'workspaces',
+        redirectTo: 'projects',
       },
     ]),
     MatButtonModule,

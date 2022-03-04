@@ -1,0 +1,28 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/projects/components/projects-loading",
+  "sourceRoot": "libs/dao/client/projects/components/projects-loading/src",
+  "prefix": "heavy-duty",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/dao/client/projects/components/projects-loading"
+      ],
+      "options": {
+        "jestConfig": "libs/dao/client/projects/components/projects-loading/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/projects/components/projects-loading/src/**/*.ts",
+          "libs/dao/client/projects/components/projects-loading/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

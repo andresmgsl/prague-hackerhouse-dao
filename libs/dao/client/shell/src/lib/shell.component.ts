@@ -12,13 +12,18 @@ import { filter } from 'rxjs';
 @Component({
   selector: 'bd-shell',
   template: `
-    <header class="mt-5 flex justify-center flex-wrap">
-      <h1 class="w-full text-center">DAO Prague HackerHouse - SHELL</h1>
-      <p class="w-full text-center">Connect your wallet to vote</p>
-    </header>
-    <main class="flex justify-center">
-      <hd-wallet-multi-button color="primary"></hd-wallet-multi-button>
-    </main>
+    <div class="pt-10 pr-20 pl-20">
+      <header class=" w-full flex justify-between mb-20">
+        <div class="flex items-center">
+          <img src="assets/images/logo.png" class="w-8" alt="DAO NAME LOGO" />
+          <p class="m-0 ml-4">DAO Name</p>
+        </div>
+        <hd-wallet-multi-button color="primary"></hd-wallet-multi-button>
+      </header>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

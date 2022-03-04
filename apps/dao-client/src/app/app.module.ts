@@ -13,9 +13,13 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot(
       [
         {
-          path: '',
+          path: 'projects',
           loadChildren: () =>
             import('@dao-client/shell').then((m) => m.ShellModule),
+        },
+        {
+          path: '**',
+          redirectTo: 'projects',
         },
       ],
       { initialNavigation: 'enabledBlocking' }

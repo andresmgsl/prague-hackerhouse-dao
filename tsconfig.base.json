@@ -202,6 +202,18 @@
       ],
       "@heavy-duty/dao-devkit": ["libs/dao/shared/devkit/src/index.ts"],
       "@heavy-duty/dao-store": ["libs/dao/shared/store/src/index.ts"],
+      "@heavy-duty/dao/client/projects/components/projects-list": [
+        "libs/dao/client/projects/components/projects-list/src/index.ts"
+      ],
+      "@heavy-duty/dao/client/projects/components/projects-loading": [
+        "libs/dao/client/projects/components/projects-loading/src/index.ts"
+      ],
+      "@heavy-duty/dao/client/projects/data-access": [
+        "libs/dao/client/projects/data-access/src/index.ts"
+      ],
+      "@heavy-duty/dao/client/projects/pages/view-project": [
+        "libs/dao/client/projects/pages/view-project/src/index.ts"
+      ],
       "@heavy-duty/generator": ["libs/dao/shared/generator/src/index.ts"],
       "@heavy-duty/rxjs": ["libs/rxjs/src/index.ts"],
       "@heavy-duty/shared/utils/operators": [
