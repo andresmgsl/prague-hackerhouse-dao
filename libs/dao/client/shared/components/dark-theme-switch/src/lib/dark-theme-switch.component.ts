@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DarkThemeStore } from '@dao-client/core-data-access';
+import { DarkThemeStore } from '@dao/client/core-data-access';
 import { map } from 'rxjs/operators';
 
 @Component({

@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
         {
           path: 'projects',
           loadChildren: () =>
-            import('@dao-client/shell').then((m) => m.ShellModule),
+            import('@dao/client/shell').then((m) => m.ShellModule),
         },
         {
           path: '**',

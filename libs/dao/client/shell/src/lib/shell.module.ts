@@ -6,8 +6,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { DarkThemeDirectiveModule } from '@dao-client/dark-theme';
-import { DarkThemeSwitchModule } from '@dao-client/dark-theme-switch';
+import { DarkThemeDirectiveModule } from '@dao/client/dark-theme';
+import { DarkThemeSwitchModule } from '@dao/client/dark-theme-switch';
 import { HdWalletAdapterMaterialModule } from '@heavy-duty/wallet-adapter-material';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { ShellComponent } from './shell.component';
@@ -24,9 +24,9 @@ import { ShellComponent } from './shell.component';
           {
             path: '',
             loadChildren: () =>
-              import(
-                '@heavy-duty/dao/client/projects/components/projects-list'
-              ).then((m) => m.ProjectsListModule),
+              import('@dao/client/projects/components/projects-list').then(
+                (m) => m.ProjectsListModule
+              ),
           },
         ],
       },

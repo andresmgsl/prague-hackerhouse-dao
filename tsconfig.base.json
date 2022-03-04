@@ -16,41 +16,38 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@dao-client/core-data-access": [
+      "@dao/client/core-data-access": [
         "libs/dao/client/core/data-access/src/index.ts"
       ],
-      "@dao-client/dark-theme": [
+      "@dao/client/dark-theme": [
         "libs/dao/client/shared/directives/dark-theme/src/index.ts"
       ],
-      "@dao-client/dark-theme-service": [
+      "@dao/client/dark-theme-service": [
         "libs/dao/client/shared/services/dark-theme-service/src/index.ts"
       ],
-      "@dao-client/dark-theme-switch": [
+      "@dao/client/dark-theme-switch": [
         "libs/dao/client/shared/components/dark-theme-switch/src/index.ts"
       ],
-      "@dao-client/obscure-address": [
+      "@dao/client/obscure-address": [
         "libs/dao/client/shared/pipes/obscure-address/src/index.ts"
       ],
-      "@dao-client/shell": ["libs/dao/client/shell/src/index.ts"],
-      "@dao-client/stop-propagation": [
+      "@dao/client/shell": ["libs/dao/client/shell/src/index.ts"],
+      "@dao/client/stop-propagation": [
         "libs/dao/client/shared/directives/stop-propagation/src/index.ts"
       ],
-      "@heavy-duty/dao-devkit": ["libs/dao/shared/devkit/src/index.ts"],
-      "@heavy-duty/dao-store": ["libs/dao/shared/store/src/index.ts"],
-      "@heavy-duty/dao/client/projects/components/projects-list": [
-        "libs/dao/client/projects/components/projects-list/src/index.ts"
-      ],
-      "@heavy-duty/dao/client/projects/components/projects-loading": [
+      "@dao/client/projects/components/projects-loading": [
         "libs/dao/client/projects/components/projects-loading/src/index.ts"
       ],
-      "@heavy-duty/dao/client/projects/data-access": [
+      "@dao/client/projects/data-access": [
         "libs/dao/client/projects/data-access/src/index.ts"
       ],
-      "@heavy-duty/dao/client/projects/pages/view-project": [
+      "@dao/client/projects/pages/view-project": [
         "libs/dao/client/projects/pages/view-project/src/index.ts"
       ],
+      "@dao/client/projects/components/projects-list": [
+        "libs/dao/client/projects/components/projects-list/src/index.ts"
+      ],
       "@heavy-duty/rxjs": ["libs/rxjs/src/index.ts"],
-
       "@heavy-duty/wallet-adapter": [
         "libs/wallet-adapter/data-access/src/index.ts"
       ],
