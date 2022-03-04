@@ -1,0 +1,28 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/shared/components/dark-theme-switch",
+  "sourceRoot": "libs/dao/client/shared/components/dark-theme-switch/src",
+  "prefix": "bd",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/dao/client/shared/components/dark-theme-switch"
+      ],
+      "options": {
+        "jestConfig": "libs/dao/client/shared/components/dark-theme-switch/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/shared/components/dark-theme-switch/src/**/*.ts",
+          "libs/dao/client/shared/components/dark-theme-switch/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

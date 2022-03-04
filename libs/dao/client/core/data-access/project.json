@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/core/data-access",
+  "sourceRoot": "libs/dao/client/core/data-access/src",
+  "prefix": "bd",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dao/client/core/data-access"],
+      "options": {
+        "jestConfig": "libs/dao/client/core/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/core/data-access/src/**/*.ts",
+          "libs/dao/client/core/data-access/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

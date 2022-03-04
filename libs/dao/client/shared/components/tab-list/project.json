@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/shared/components/tab-list",
+  "sourceRoot": "libs/dao/client/shared/components/tab-list/src",
+  "prefix": "bd",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dao/client/shared/components/tab-list"],
+      "options": {
+        "jestConfig": "libs/dao/client/shared/components/tab-list/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/shared/components/tab-list/src/**/*.ts",
+          "libs/dao/client/shared/components/tab-list/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

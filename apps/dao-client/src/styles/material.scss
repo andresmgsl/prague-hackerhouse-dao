@@ -1,0 +1,165 @@
+@use '@angular/material' as mat;
+@use '@angular/cdk';
+@use './components/custom-containers.scss' as containers;
+
+@import './constants/sizes.scss';
+@import './themes/default-themes.scss';
+@import '@angular/material/theming';
+
+@import 'https://fonts.googleapis.com/css?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+@include mat.core($fontConfig);
+
+$theme: set-light-theme($theme-primary, $theme-accent, $theme-warn);
+$darkTheme: set-dark-theme($theme-primary, $theme-accent, $theme-warn);
+
+// $bd-background-color: mat.get-color-from-palette($theme);
+
+// Theme Init
+
+@include angular-material-theme($darkTheme);
+// set custom themes
+@include containers.theme($darkTheme);
+// end
+
+.darkMode {
+  @include angular-material-theme($theme);
+  // set custom themes
+  @include containers.theme($theme);
+  // end
+}
+
+// Specific component overrides, pieces that are not in line with the general theming
+
+// Handle buttons appropriately, with respect to line-height
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 0.65em;
+  min-width: 3em;
+  line-height: 36.4px;
+}
+
+.mat-standard-chip {
+  padding: 0.5em 0.85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';
+  .mat-badge-content {
+    font-family: 'Roboto';
+  }
+}
+
+// Custom
+//// Handle buttons appropriately, with respect to line-height
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 0.65em;
+  min-width: 3em;
+  line-height: 36.4px;
+}
+
+.mat-standard-chip {
+  padding: 0.5em 0.85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';
+  .mat-badge-content {
+    font-family: 'Roboto';
+  }
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+
+.mat-form-field {
+  margin-bottom: 0.5rem;
+}
+
+.mat-form-field-wrapper {
+  margin-bottom: -1.25em;
+}
+
+.mat-sidenav {
+  .mat-nav-list {
+    padding: 0 !important;
+
+    .mat-list-item-content {
+      padding: 0 !important;
+
+      .mat-list-text {
+        height: 100%;
+
+        .mat-line {
+          padding-left: 1rem;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+
+  .mat-expansion-panel {
+    border-radius: 0 !important;
+  }
+
+  .mat-expansion-panel-header {
+    height: 3rem !important;
+
+    .mat-expanded {
+      height: 3rem !important;
+    }
+  }
+}
+.mat-list-base {
+  padding: 0 !important;
+}
+
+.mat-menu-panel {
+  max-width: unset !important;
+}
+
+.mat-fab.cdk-keyboard-focused,
+.mat-mini-fab.cdk-keyboard-focused {
+  transform: scale(1.5);
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%),
+    0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%) !important;
+}
+
+.mat-tab-links {
+  height: $tabs-height;
+}
+
+.mat-tab-link {
+  height: $tabs-height !important;
+}
+
+.darkMode {
+  .mat-fab.cdk-keyboard-focused,
+  .mat-mini-fab.cdk-keyboard-focused {
+    box-shadow: 0px 3px 5px -1px rgb(255 255 255 / 20%),
+      0px 6px 10px 0px rgb(255 255 255 / 14%),
+      0px 1px 18px 0px rgb(255 255 255 / 12%) !important;
+  }
+
+  .bd-custom-color .mat-accent.mat-button-disabled {
+    color: #444444 !important;
+    background-color: rgba(250, 250, 250, 0.42) !important;
+  }
+}
