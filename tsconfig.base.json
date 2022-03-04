@@ -16,51 +16,6 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@dao-client/application-explorer": [
-        "libs/dao/client/applications/components/application-explorer/src/index.ts"
-      ],
-      "@dao-client/application-tab": [
-        "libs/dao/client/applications/components/application-tab/src/index.ts"
-      ],
-      "@dao-client/applications-data-access": [
-        "libs/dao/client/applications/data-access/src/index.ts"
-      ],
-      "@dao-client/auth-data-access": [
-        "libs/dao/client/auth/data-access/src/index.ts"
-      ],
-      "@dao-client/auth-interceptor": [
-        "libs/dao/client/auth/utils/auth-interceptor/src/index.ts"
-      ],
-      "@dao-client/budget-details": [
-        "libs/dao/client/budgets/components/budget-details/src/index.ts"
-      ],
-      "@dao-client/budgets-data-access": [
-        "libs/dao/client/budgets/data-access/src/index.ts"
-      ],
-      "@dao-client/code-editor": [
-        "libs/dao/client/shared/components/code-editor/src/index.ts"
-      ],
-      "@dao-client/collaborators-data-access": [
-        "libs/dao/client/collaborators/data-access/src/index.ts"
-      ],
-      "@dao-client/collaborators-list": [
-        "libs/dao/client/collaborators/components/collaborators-list/src/index.ts"
-      ],
-      "@dao-client/collection-attributes-list": [
-        "libs/dao/client/collections/components/collection-attributes-list/src/index.ts"
-      ],
-      "@dao-client/collection-explorer": [
-        "libs/dao/client/collections/components/collection-explorer/src/index.ts"
-      ],
-      "@dao-client/collection-tab": [
-        "libs/dao/client/collections/components/collection-tab/src/index.ts"
-      ],
-      "@dao-client/collections-data-access": [
-        "libs/dao/client/collections/data-access/src/index.ts"
-      ],
-      "@dao-client/config-store": [
-        "libs/dao/client/shared/stores/config-store/src/index.ts"
-      ],
       "@dao-client/core-data-access": [
         "libs/dao/client/core/data-access/src/index.ts"
       ],
@@ -73,132 +28,12 @@
       "@dao-client/dark-theme-switch": [
         "libs/dao/client/shared/components/dark-theme-switch/src/index.ts"
       ],
-      "@dao-client/deposit-to-budget": [
-        "libs/dao/client/budgets/modals/deposit-to-budget/src/index.ts"
-      ],
-      "@dao-client/edit-application": [
-        "libs/dao/client/applications/modals/edit-application/src/index.ts"
-      ],
-      "@dao-client/edit-collection": [
-        "libs/dao/client/collections/modals/edit-collection/src/index.ts"
-      ],
-      "@dao-client/edit-collection-attribute": [
-        "libs/dao/client/collections/modals/edit-collection-attribute/src/index.ts"
-      ],
-      "@dao-client/edit-instruction": [
-        "libs/dao/client/instructions/modals/edit-instruction/src/index.ts"
-      ],
-      "@dao-client/edit-instruction-argument": [
-        "libs/dao/client/instructions/modals/edit-instruction-argument/src/index.ts"
-      ],
-      "@dao-client/edit-instruction-document": [
-        "libs/dao/client/instructions/modals/edit-instruction-document/src/index.ts"
-      ],
-      "@dao-client/edit-instruction-relation": [
-        "libs/dao/client/instructions/modals/edit-instruction-relation/src/index.ts"
-      ],
-      "@dao-client/edit-instruction-signer": [
-        "libs/dao/client/instructions/modals/edit-instruction-signer/src/index.ts"
-      ],
-      "@dao-client/edit-workspace": [
-        "libs/dao/client/workspaces/modals/edit-workspace/src/index.ts"
-      ],
-      "@dao-client/import-workspace": [
-        "libs/dao/client/workspaces/modals/import-workspace/src/index.ts"
-      ],
-      "@dao-client/instruction-arguments-list": [
-        "libs/dao/client/instructions/components/instruction-arguments-list/src/index.ts"
-      ],
-      "@dao-client/instruction-documents-list": [
-        "libs/dao/client/instructions/components/instruction-documents-list/src/index.ts"
-      ],
-      "@dao-client/instruction-explorer": [
-        "libs/dao/client/instructions/components/instruction-explorer/src/index.ts"
-      ],
-      "@dao-client/instruction-signers-list": [
-        "libs/dao/client/instructions/components/instruction-signers-list/src/index.ts"
-      ],
-      "@dao-client/instruction-tab": [
-        "libs/dao/client/instructions/components/instruction-tab/src/index.ts"
-      ],
-      "@dao-client/instructions-data-access": [
-        "libs/dao/client/instructions/data-access/src/index.ts"
-      ],
-      "@dao-client/internet-connectivity": [
-        "libs/dao/client/shared/directives/internet-connectivity/src/index.ts"
-      ],
-      "@dao-client/loaded-workspaces-list": [
-        "libs/dao/client/workspaces/components/loaded-workspaces-list/src/index.ts"
-      ],
-      "@dao-client/my-workspaces-list": [
-        "libs/dao/client/workspaces/components/my-workspaces-list/src/index.ts"
-      ],
-      "@dao-client/notification-store": [
-        "libs/dao/client/shared/stores/notification-store/src/index.ts"
-      ],
-      "@dao-client/notifications-data-access": [
-        "libs/dao/client/notifications/data-access/src/index.ts"
-      ],
       "@dao-client/obscure-address": [
         "libs/dao/client/shared/pipes/obscure-address/src/index.ts"
-      ],
-      "@dao-client/page-header": [
-        "libs/dao/client/shared/directives/page-header/src/index.ts"
-      ],
-      "@dao-client/profile": [
-        "libs/dao/client/auth/pages/profile/src/index.ts"
-      ],
-      "@dao-client/profile-tab": [
-        "libs/dao/client/users/components/profile-tab/src/index.ts"
-      ],
-      "@dao-client/section-header": [
-        "libs/dao/client/shared/directives/section-header/src/index.ts"
       ],
       "@dao-client/shell": ["libs/dao/client/shell/src/index.ts"],
       "@dao-client/stop-propagation": [
         "libs/dao/client/shared/directives/stop-propagation/src/index.ts"
-      ],
-      "@dao-client/tab-list": [
-        "libs/dao/client/shared/components/tab-list/src/index.ts"
-      ],
-      "@dao-client/tab-store": [
-        "libs/dao/client/shared/stores/tab-store/src/index.ts"
-      ],
-      "@dao-client/unauthorized-access": [
-        "libs/dao/client/auth/pages/unauthorized-access/src/index.ts"
-      ],
-      "@dao-client/user-details": [
-        "libs/dao/client/users/components/user-details/src/index.ts"
-      ],
-      "@dao-client/users-data-access": [
-        "libs/dao/client/users/data-access/src/index.ts"
-      ],
-      "@dao-client/view-application": [
-        "libs/dao/client/applications/pages/view-application/src/index.ts"
-      ],
-      "@dao-client/view-collection": [
-        "libs/dao/client/collections/pages/view-collection/src/index.ts"
-      ],
-      "@dao-client/view-instruction": [
-        "libs/dao/client/instructions/pages/view-instruction/src/index.ts"
-      ],
-      "@dao-client/view-profile": [
-        "libs/dao/client/users/pages/view-profile/src/index.ts"
-      ],
-      "@dao-client/view-workspace": [
-        "libs/dao/client/workspaces/pages/view-workspace/src/index.ts"
-      ],
-      "@dao-client/workspace-explorer": [
-        "libs/dao/client/workspaces/components/workspace-explorer/src/index.ts"
-      ],
-      "@dao-client/workspace-selector": [
-        "libs/dao/client/workspaces/components/workspace-selector/src/index.ts"
-      ],
-      "@dao-client/workspace-tab": [
-        "libs/dao/client/workspaces/components/workspace-tab/src/index.ts"
-      ],
-      "@dao-client/workspaces-data-access": [
-        "libs/dao/client/workspaces/data-access/src/index.ts"
       ],
       "@heavy-duty/dao-devkit": ["libs/dao/shared/devkit/src/index.ts"],
       "@heavy-duty/dao-store": ["libs/dao/shared/store/src/index.ts"],
@@ -214,11 +49,8 @@
       "@heavy-duty/dao/client/projects/pages/view-project": [
         "libs/dao/client/projects/pages/view-project/src/index.ts"
       ],
-      "@heavy-duty/generator": ["libs/dao/shared/generator/src/index.ts"],
       "@heavy-duty/rxjs": ["libs/rxjs/src/index.ts"],
-      "@heavy-duty/shared/utils/operators": [
-        "libs/shared/utils/operators/src/index.ts"
-      ],
+
       "@heavy-duty/wallet-adapter": [
         "libs/wallet-adapter/data-access/src/index.ts"
       ],
