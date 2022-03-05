@@ -4,6 +4,7 @@ import { ProjectsStore } from '@dao/client/projects/data-access';
 @Component({
   selector: 'bd-projects-list',
   template: `
+    <bd-event-vault-balance></bd-event-vault-balance>
     <div class="flex flex-wrap justify-center">
       <div class="mr-5 mb-10 w-56" *ngFor="let project of projects$ | ngrxPush">
         <mat-card class="example-card">

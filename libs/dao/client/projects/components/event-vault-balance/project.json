@@ -1,0 +1,28 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/projects/components/event-vault-balance",
+  "sourceRoot": "libs/dao/client/projects/components/event-vault-balance/src",
+  "prefix": "bd",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/dao/client/projects/components/event-vault-balance"
+      ],
+      "options": {
+        "jestConfig": "libs/dao/client/projects/components/event-vault-balance/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/projects/components/event-vault-balance/src/**/*.ts",
+          "libs/dao/client/projects/components/event-vault-balance/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
