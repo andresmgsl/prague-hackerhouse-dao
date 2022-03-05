@@ -13,7 +13,7 @@ import {
   switchMap,
 } from 'rxjs';
 
-const EVENT_ID = 'CTtSrzUrmanfC8TwYndbTayHckk9kWmc7Fr1AdbreGEE';
+const EVENT_ID = 'GQrfbmLq7ctktfofbR9DEJxM7GQ5YqTnoL1uLc1DT2hM';
 
 interface ViewModel {
   event: any;

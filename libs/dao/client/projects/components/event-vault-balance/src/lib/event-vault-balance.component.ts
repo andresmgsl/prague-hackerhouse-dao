@@ -11,7 +11,5 @@ import { EventsStore } from '@heavy-duty/dao/client/events/data-access';
   styles: [],
 })
 export class EventVaultBalanceComponent {
-  constructor(private readonly _eventStore: EventsStore) {
-    this._eventStore.state$.subscribe((a) => console.log(a));
-  }
+  constructor(private readonly _eventStore: EventsStore) {}
 }

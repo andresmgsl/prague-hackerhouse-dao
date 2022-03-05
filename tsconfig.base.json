@@ -43,6 +43,9 @@
       "@dao/client/projects/data-access": [
         "libs/dao/client/projects/data-access/src/index.ts"
       ],
+      "@dao/client/projects/modals/create-project": [
+        "libs/dao/client/projects/modals/create-project/src/index.ts"
+      ],
       "@dao/client/projects/pages/view-project": [
         "libs/dao/client/projects/pages/view-project/src/index.ts"
       ],
@@ -53,8 +56,8 @@
       "@heavy-duty/dao/client/events/data-access": [
         "libs/dao/client/events/data-access/src/index.ts"
       ],
-      "@dao/client/projects/modals/create-project": [
-        "libs/dao/client/projects/modals/create-project/src/index.ts"
+      "@heavy-duty/dao/client/participants/data-access": [
+        "libs/dao/client/participants/data-access/src/index.ts"
       ],
       "@heavy-duty/rxjs": ["libs/rxjs/src/index.ts"],
       "@heavy-duty/wallet-adapter": [

@@ -7,6 +7,7 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectsStore } from '@dao/client/projects/data-access';
 import { EventsStore } from '@heavy-duty/dao/client/events/data-access';
+import { ParticipantsStore } from '@heavy-duty/dao/client/participants/data-access';
 import { ProgramStore } from '@heavy-duty/ng-anchor';
 import { ConnectionStore, WalletStore } from '@heavy-duty/wallet-adapter';
 import { ComponentStore } from '@ngrx/component-store';
@@ -35,15 +36,19 @@ import { filter } from 'rxjs';
         </div>
       </header>
       <main>
+        <p *ngIf="participant$ | ngrxPush">
+          You're participating in the event.
+        </p>
         <router-outlet></router-outlet>
       </main>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ProgramStore, EventsStore, ProjectsStore],
+  providers: [ProgramStore, EventsStore, ProjectsStore, ParticipantsStore],
 })
 export class ShellComponent extends ComponentStore<object> implements OnInit {
   @HostBinding('class') class = 'block';
+  participant$ = this._participantsStore.participant$;
 
   constructor(
     private readonly _walletStore: WalletStore,
@@ -51,11 +56,10 @@ export class ShellComponent extends ComponentStore<object> implements OnInit {
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _connectionStore: ConnectionStore,
     private readonly _programStore: ProgramStore,
-    private readonly _projectsStore: ProjectsStore
+    private readonly _projectsStore: ProjectsStore,
+    private readonly _participantsStore: ParticipantsStore
   ) {
     super();
-
-    this._projectsStore.state$.subscribe((a) => console.log(a));
   }
 
   ngOnInit() {
@@ -65,11 +69,10 @@ export class ShellComponent extends ComponentStore<object> implements OnInit {
 
     this._walletStore.connected$
       .pipe(filter((connected) => connected))
-      .subscribe((resp) => console.log(resp));
+      .subscribe();
   }
 
   onApplicationCreated(project: any) {
-    console.log(project);
     this._projectsStore.createProject(project);
   }
 }

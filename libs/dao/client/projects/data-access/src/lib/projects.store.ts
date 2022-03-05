@@ -6,7 +6,6 @@ import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { Provider } from '@project-serum/anchor';
 import {
   createAssociatedTokenAccountInstruction,
-  createMintToInstruction,
   getAccount,
   getAssociatedTokenAddress,
 } from '@solana/spl-token';
@@ -23,8 +22,8 @@ import {
   switchMap,
 } from 'rxjs';
 
-const EVENT_ID = 'CTtSrzUrmanfC8TwYndbTayHckk9kWmc7Fr1AdbreGEE';
-const ACCEPTED_MINT = 'J2eBMSxi33gBoiR2eLgaoXahuHXkA7qb2vSsojzVGRcp';
+const EVENT_ID = 'GQrfbmLq7ctktfofbR9DEJxM7GQ5YqTnoL1uLc1DT2hM';
+const ACCEPTED_MINT = 'AyJsiH6yQGL7BQfxuk7sgaKQH7NQ8kv6BekEMsqF7QGM';
 
 interface ViewModel {
   projects: any;
@@ -36,8 +35,7 @@ const initialState: ViewModel = {
 
 export const createAssociatedTokenAccount = async (
   provider: Provider,
-  mint: PublicKey,
-  amount: number
+  mint: PublicKey
 ): Promise<PublicKey | undefined> => {
   const associatedTokenPublicKey = await getAssociatedTokenAddress(
     mint,
@@ -60,23 +58,14 @@ export const createAssociatedTokenAccount = async (
 
   // Create a token account for the user and mint some tokens
   await provider.send(
-    new Transaction()
-      .add(
-        createAssociatedTokenAccountInstruction(
-          provider.wallet.publicKey,
-          associatedTokenPublicKey,
-          provider.wallet.publicKey,
-          mint
-        )
+    new Transaction().add(
+      createAssociatedTokenAccountInstruction(
+        provider.wallet.publicKey,
+        associatedTokenPublicKey,
+        provider.wallet.publicKey,
+        mint
       )
-      .add(
-        createMintToInstruction(
-          mint,
-          associatedTokenPublicKey,
-          provider.wallet.publicKey,
-          amount
-        )
-      )
+    )
   );
 
   return associatedTokenPublicKey;
@@ -145,36 +134,23 @@ export class ProjectsStore extends ComponentStore<ViewModel> {
                 return from(
                   createAssociatedTokenAccount(
                     writer.provider,
-                    new PublicKey(ACCEPTED_MINT),
-                    0
+                    new PublicKey(ACCEPTED_MINT)
                   )
-                    .then(async (associatedTokenPublicKey) => ({
-                      associatedTokenPublicKey,
-                      createProjectAccountIx:
-                        await writer.account.project.createInstruction(
-                          projectKeypair,
-                          1000 // TODO: Change to the right size
-                        ),
-                    }))
+                    .then(async (associatedTokenPublicKey) => {
+                      return {
+                        associatedTokenPublicKey,
+                        createProjectAccountIx:
+                          await writer.account.project.createInstruction(
+                            projectKeypair,
+                            1000 // TODO: Change to the right size
+                          ),
+                      };
+                    })
                     .then(
                       ({
                         associatedTokenPublicKey,
                         createProjectAccountIx,
                       }) => {
-                        console.log(
-                          {
-                            title,
-                            description,
-                          },
-                          {
-                            authority,
-                            event: new PublicKey(EVENT_ID),
-                            project: projectKeypair.publicKey,
-                            acceptedMint: new PublicKey(ACCEPTED_MINT),
-                            projectVault: associatedTokenPublicKey,
-                          },
-                          { createProjectAccountIx }
-                        );
                         return writer.methods
                           .createProject({
                             title,

@@ -4,6 +4,7 @@
     "dao-client": "apps/dao-client",
     "dao-client-core-data-access": "libs/dao/client/core/data-access",
     "dao-client-events-data-access": "libs/dao/client/events/data-access",
+    "dao-client-participants-data-access": "libs/dao/client/participants/data-access",
     "dao-client-projects-components-event-vault-balance": "libs/dao/client/projects/components/event-vault-balance",
     "dao-client-projects-components-projects-list": "libs/dao/client/projects/components/projects-list",
     "dao-client-projects-components-projects-loading": "libs/dao/client/projects/components/projects-loading",
