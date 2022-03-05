@@ -7,6 +7,7 @@
     "dao-client-projects-components-projects-list": "libs/dao/client/projects/components/projects-list",
     "dao-client-projects-components-projects-loading": "libs/dao/client/projects/components/projects-loading",
     "dao-client-projects-data-access": "libs/dao/client/projects/data-access",
+    "dao-client-projects-modals-create-project": "libs/dao/client/projects/modals/create-project",
     "dao-client-projects-pages-view-project": "libs/dao/client/projects/pages/view-project",
     "dao-client-shared-components-dark-theme-switch": "libs/dao/client/shared/components/dark-theme-switch",
     "dao-client-shared-directives-dark-theme": "libs/dao/client/shared/directives/dark-theme",

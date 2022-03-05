@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { DarkThemeDirectiveModule } from '@dao/client/dark-theme';
 import { DarkThemeSwitchModule } from '@dao/client/dark-theme-switch';
+import { CreateProjectModule } from '@dao/client/projects/modals/create-project';
 import { HdWalletAdapterMaterialModule } from '@heavy-duty/wallet-adapter-material';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { ShellComponent } from './shell.component';
@@ -44,6 +45,7 @@ import { ShellComponent } from './shell.component';
     HdWalletAdapterMaterialModule,
     DarkThemeDirectiveModule,
     DarkThemeSwitchModule,
+    CreateProjectModule,
   ],
 })
 export class ShellModule {}
