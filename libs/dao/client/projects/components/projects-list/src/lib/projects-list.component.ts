@@ -32,13 +32,16 @@ import { PublicKey } from '@solana/web3.js';
           <div class="flex items-center">
             <h2 class="m-0 font-bold">Votes: {{ project.votes }}</h2>
             <div class="w-full"></div>
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="onVote(project.publicKey)"
-            >
-              Vote
-            </button>
+            <div class="flex flex-col justify-center gap-2">
+              <button
+                mat-raised-button
+                color="primary"
+                (click)="onVote(project.publicKey)"
+              >
+                Vote
+              </button>
+              <button mat-raised-button color="accent">Redeem</button>
+            </div>
           </div>
         </mat-card>
       </div>
