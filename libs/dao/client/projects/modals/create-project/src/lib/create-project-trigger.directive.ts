@@ -1,11 +1,10 @@
 import { Directive, EventEmitter, HostListener, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Project } from '@dao/client/projects/data-access';
 import { CreateProjectComponent } from './create-project.component';
 
 @Directive({ selector: '[bdCreateApplicationTrigger]' })
 export class CreateApplicationTriggerDirective {
-  @Output() aplicationCreated = new EventEmitter<Project>();
+  @Output() aplicationCreated = new EventEmitter<any>();
   @HostListener('click') onClick(): void {
     this._matDialog
       .open<CreateProjectComponent>(CreateProjectComponent)

@@ -17,26 +17,26 @@ import { MatSnackBar } from '@angular/material/snack-bar';
           <mat-form-field
             class="w-full mb-5"
             appearance="fill"
-            hintLabel="Enter the project name."
+            hintLabel="Enter the project title."
           >
-            <mat-label>Name</mat-label>
+            <mat-label>Title</mat-label>
             <input
               matInput
-              formControlName="name"
+              formControlName="title"
               required
               autocomplete="off"
               maxlength="32"
             />
             <mat-hint align="end"
-              >{{ this.form.get('name')?.value?.length || 0 }}/32</mat-hint
+              >{{ this.form.get('title')?.value?.length || 0 }}/32</mat-hint
             >
 
             <mat-error
-              *ngIf="submitted && this.form.get('name')?.hasError('required')"
-              >The name is mandatory.</mat-error
+              *ngIf="submitted && this.form.get('title')?.hasError('required')"
+              >The title is mandatory.</mat-error
             >
             <mat-error
-              *ngIf="submitted && this.form.get('name')?.hasError('maxlength')"
+              *ngIf="submitted && this.form.get('title')?.hasError('maxlength')"
               >Maximum length is 32.</mat-error
             >
           </mat-form-field>
@@ -98,7 +98,7 @@ export class CreateProjectComponent {
     private readonly _matDialogRef: MatDialogRef<CreateProjectComponent>
   ) {
     this.form = new FormGroup({
-      name: new FormControl('', {
+      title: new FormControl('', {
         validators: [Validators.required, Validators.maxLength(32)],
       }),
       description: new FormControl('', {

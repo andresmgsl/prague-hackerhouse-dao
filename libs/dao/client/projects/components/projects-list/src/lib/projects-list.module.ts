@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { ObscureAddressModule } from '@dao/client/obscure-address';
 import { EventVaultBalanceModule } from '@dao/client/projects/components/event-vault-balance';
 import { ReactiveComponentModule } from '@ngrx/component';
 import { ProjectsListComponent } from './projects-list.component';
@@ -17,6 +18,7 @@ import { ProjectsListComponent } from './projects-list.component';
     ReactiveComponentModule,
     MatCardModule,
     MatButtonModule,
+    ObscureAddressModule,
   ],
   declarations: [ProjectsListComponent],
   exports: [ProjectsListComponent],

@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Project } from '@dao/client/projects/data-access';
+import { ProjectsStore } from '@dao/client/projects/data-access';
 import { EventsStore } from '@heavy-duty/dao/client/events/data-access';
 import { ProgramStore } from '@heavy-duty/ng-anchor';
 import { ConnectionStore, WalletStore } from '@heavy-duty/wallet-adapter';
@@ -40,7 +40,7 @@ import { filter } from 'rxjs';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [ProgramStore, EventsStore],
+  providers: [ProgramStore, EventsStore, ProjectsStore],
 })
 export class ShellComponent extends ComponentStore<object> implements OnInit {
   @HostBinding('class') class = 'block';
@@ -50,9 +50,12 @@ export class ShellComponent extends ComponentStore<object> implements OnInit {
     private readonly _router: Router,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _connectionStore: ConnectionStore,
-    private readonly _programStore: ProgramStore
+    private readonly _programStore: ProgramStore,
+    private readonly _projectsStore: ProjectsStore
   ) {
     super();
+
+    this._projectsStore.state$.subscribe((a) => console.log(a));
   }
 
   ngOnInit() {
@@ -65,7 +68,8 @@ export class ShellComponent extends ComponentStore<object> implements OnInit {
       .subscribe((resp) => console.log(resp));
   }
 
-  onApplicationCreated(project: Project) {
+  onApplicationCreated(project: any) {
     console.log(project);
+    this._projectsStore.createProject(project);
   }
 }
