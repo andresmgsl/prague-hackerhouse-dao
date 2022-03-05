@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/events/data-access",
+  "sourceRoot": "libs/dao/client/events/data-access/src",
+  "prefix": "heavy-duty",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dao/client/events/data-access"],
+      "options": {
+        "jestConfig": "libs/dao/client/events/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/events/data-access/src/**/*.ts",
+          "libs/dao/client/events/data-access/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

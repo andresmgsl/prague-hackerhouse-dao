@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  rpcEndpoint: 'http://localhost:8899',
-  rpcWebsocket: 'ws://localhost:8900',
-  network: 'localnet',
+  decidooorId: 'C7EcdBmywF3p1CwMJntzFN81PNyaf92yKZbkseoPck8D',
 };
 
 /*

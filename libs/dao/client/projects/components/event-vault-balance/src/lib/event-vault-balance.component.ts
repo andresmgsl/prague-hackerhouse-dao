@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EventsStore } from '@heavy-duty/dao/client/events/data-access';
 
 @Component({
   selector: 'bd-event-vault-balance',
@@ -9,4 +10,8 @@ import { Component } from '@angular/core';
   `,
   styles: [],
 })
-export class EventVaultBalanceComponent {}
+export class EventVaultBalanceComponent {
+  constructor(private readonly _eventStore: EventsStore) {
+    this._eventStore.state$.subscribe((a) => console.log(a));
+  }
+}

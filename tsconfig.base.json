@@ -31,6 +31,9 @@
       "@dao/client/obscure-address": [
         "libs/dao/client/shared/pipes/obscure-address/src/index.ts"
       ],
+      "@dao/client/projects/components/event-vault-balance": [
+        "libs/dao/client/projects/components/event-vault-balance/src/index.ts"
+      ],
       "@dao/client/projects/components/projects-list": [
         "libs/dao/client/projects/components/projects-list/src/index.ts"
       ],
@@ -47,8 +50,8 @@
       "@dao/client/stop-propagation": [
         "libs/dao/client/shared/directives/stop-propagation/src/index.ts"
       ],
-      "@dao/client/projects/components/event-vault-balance": [
-        "libs/dao/client/projects/components/event-vault-balance/src/index.ts"
+      "@heavy-duty/dao/client/events/data-access": [
+        "libs/dao/client/events/data-access/src/index.ts"
       ],
       "@heavy-duty/rxjs": ["libs/rxjs/src/index.ts"],
       "@heavy-duty/wallet-adapter": [
