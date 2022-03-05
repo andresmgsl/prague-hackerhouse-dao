@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable } from '@angular/core';
+import { EventsStore } from '@heavy-duty/dao/client/events/data-access';
 import { ProgramStore } from '@heavy-duty/ng-anchor';
 import { WalletStore } from '@heavy-duty/wallet-adapter';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
@@ -78,8 +79,25 @@ export class ProjectsStore extends ComponentStore<ViewModel> {
   private readonly _reader$ = this._programStore.getReader('decidooor');
   private readonly _writer$ = this._programStore.getWriter('decidooor');
   readonly projects$ = this.select(({ projects }) => projects);
+  readonly fullProjects$ = this.select(
+    this.projects$,
+    this._eventsStore.eventVotes$,
+    (projects, eventVotes) =>
+      projects &&
+      eventVotes &&
+      projects.map((project: any) => ({
+        ...project,
+        votes:
+          eventVotes.votesStats
+            .find((eventVote: any) =>
+              eventVote.project.equals(project.publicKey)
+            )
+            ?.votes.toNumber() ?? 0,
+      }))
+  );
 
   constructor(
+    private readonly _eventsStore: EventsStore,
     private readonly _walletStore: WalletStore,
     private readonly _programStore: ProgramStore
   ) {
@@ -179,6 +197,39 @@ export class ProjectsStore extends ComponentStore<ViewModel> {
           );
         })
       )
+  );
+
+  voteForProject = this.effect(($: Observable<PublicKey>) =>
+    combineLatest([$, this._walletStore.publicKey$]).pipe(
+      switchMap(([projectPublicKey, authority]) => {
+        if (authority === null) {
+          return EMPTY;
+        }
+
+        return this._writer$.pipe(
+          filter((writer): writer is any => writer !== null),
+          concatMap((writer) =>
+            defer(() => {
+              return from(
+                writer.methods
+                  .vote()
+                  .accounts({
+                    authority,
+                    project: projectPublicKey,
+                    event: new PublicKey(EVENT_ID),
+                  })
+                  .rpc()
+              );
+            }).pipe(
+              tapResponse(
+                () => this.reload(),
+                (error) => console.log(error)
+              )
+            )
+          )
+        );
+      })
+    )
   );
 
   reload() {

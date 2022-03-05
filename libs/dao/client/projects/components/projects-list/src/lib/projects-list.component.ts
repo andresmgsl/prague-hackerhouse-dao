@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProjectsStore } from '@dao/client/projects/data-access';
+import { PublicKey } from '@solana/web3.js';
 
 @Component({
   selector: 'bd-projects-list',
@@ -29,9 +30,15 @@ import { ProjectsStore } from '@dao/client/projects/data-access';
             </p>
           </mat-card-content>
           <div class="flex items-center">
-            <h2 class="m-0 font-bold">{{ project.votes }}</h2>
+            <h2 class="m-0 font-bold">Votes: {{ project.votes }}</h2>
             <div class="w-full"></div>
-            <button mat-raised-button color="primary">Vote</button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="onVote(project.publicKey)"
+            >
+              Vote
+            </button>
           </div>
         </mat-card>
       </div>
@@ -41,11 +48,15 @@ import { ProjectsStore } from '@dao/client/projects/data-access';
   providers: [ProjectsStore],
 })
 export class ProjectsListComponent {
-  readonly projects$ = this._projectsStore.projects$;
+  readonly projects$ = this._projectsStore.fullProjects$;
 
   constructor(private readonly _projectsStore: ProjectsStore) {}
 
   onReload() {
     this._projectsStore.reload();
+  }
+
+  onVote(projectPublicKey: PublicKey) {
+    this._projectsStore.voteForProject(projectPublicKey);
   }
 }

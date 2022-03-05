@@ -147,7 +147,21 @@
         {
           "name": "participant",
           "isMut": true,
-          "isSigner": true
+          "isSigner": false,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "type": "string",
+                "value": "participant"
+              },
+              {
+                "kind": "account",
+                "type": "publicKey",
+                "path": "authority"
+              }
+            ]
+          }
         },
         {
           "name": "systemProgram",
@@ -256,7 +270,21 @@
         {
           "name": "participant",
           "isMut": true,
-          "isSigner": false
+          "isSigner": false,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "type": "string",
+                "value": "participant"
+              },
+              {
+                "kind": "account",
+                "type": "publicKey",
+                "path": "authority"
+              }
+            ]
+          }
         }
       ],
       "args": []
@@ -441,6 +469,10 @@
           {
             "name": "hasVoted",
             "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
           }
         ]
       }
