@@ -26,6 +26,7 @@ body {
   --success-color: $success-bgcolor;
   --warning-color: $warning-bgcolor;
   --error-color: $error-bgcolor;
+  min-height: 100vh;
 }
 
 .smooth-transition * {
