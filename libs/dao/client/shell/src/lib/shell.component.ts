@@ -39,6 +39,11 @@ import { filter } from 'rxjs';
         <p *ngIf="participant$ | ngrxPush">
           You're participating in the event.
         </p>
+        <p *ngIf="eventState$ | ngrxPush as eventState">
+          Event finishes at
+          <b> {{ eventState.redeemDate.toNumber() * 1000 | date: 'medium' }}</b
+          >.
+        </p>
         <router-outlet></router-outlet>
       </main>
     </div>
@@ -48,7 +53,8 @@ import { filter } from 'rxjs';
 })
 export class ShellComponent extends ComponentStore<object> implements OnInit {
   @HostBinding('class') class = 'block';
-  participant$ = this._participantsStore.participant$;
+  readonly participant$ = this._participantsStore.participant$;
+  readonly eventState$ = this._eventsStore.eventState$;
 
   constructor(
     private readonly _walletStore: WalletStore,
@@ -57,6 +63,7 @@ export class ShellComponent extends ComponentStore<object> implements OnInit {
     private readonly _connectionStore: ConnectionStore,
     private readonly _programStore: ProgramStore,
     private readonly _projectsStore: ProjectsStore,
+    private readonly _eventsStore: EventsStore,
     private readonly _participantsStore: ParticipantsStore
   ) {
     super();
