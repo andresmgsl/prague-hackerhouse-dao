@@ -5,6 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Project } from '@dao/client/projects/data-access';
 import { EventsStore } from '@heavy-duty/dao/client/events/data-access';
 import { ProgramStore } from '@heavy-duty/ng-anchor';
 import { ConnectionStore, WalletStore } from '@heavy-duty/wallet-adapter';
@@ -20,7 +21,18 @@ import { filter } from 'rxjs';
           <img src="assets/images/logo.png" class="w-8" alt="DAO NAME LOGO" />
           <p class="m-0 ml-4">DAO Name</p>
         </div>
-        <hd-wallet-multi-button color="primary"></hd-wallet-multi-button>
+        <div class="flex items-center">
+          <button
+            mat-button
+            color="primary"
+            class="mr-5"
+            bdCreateApplicationTrigger
+            (aplicationCreated)="onApplicationCreated($event)"
+          >
+            Create project
+          </button>
+          <hd-wallet-multi-button color="primary"></hd-wallet-multi-button>
+        </div>
       </header>
       <main>
         <router-outlet></router-outlet>
@@ -51,5 +63,9 @@ export class ShellComponent extends ComponentStore<object> implements OnInit {
     this._walletStore.connected$
       .pipe(filter((connected) => connected))
       .subscribe((resp) => console.log(resp));
+  }
+
+  onApplicationCreated(project: Project) {
+    console.log(project);
   }
 }

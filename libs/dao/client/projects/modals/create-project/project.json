@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/dao/client/projects/modals/create-project",
+  "sourceRoot": "libs/dao/client/projects/modals/create-project/src",
+  "prefix": "bd",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dao/client/projects/modals/create-project"],
+      "options": {
+        "jestConfig": "libs/dao/client/projects/modals/create-project/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/dao/client/projects/modals/create-project/src/**/*.ts",
+          "libs/dao/client/projects/modals/create-project/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -53,6 +53,9 @@
       "@heavy-duty/dao/client/events/data-access": [
         "libs/dao/client/events/data-access/src/index.ts"
       ],
+      "@dao/client/projects/modals/create-project": [
+        "libs/dao/client/projects/modals/create-project/src/index.ts"
+      ],
       "@heavy-duty/rxjs": ["libs/rxjs/src/index.ts"],
       "@heavy-duty/wallet-adapter": [
         "libs/wallet-adapter/data-access/src/index.ts"
